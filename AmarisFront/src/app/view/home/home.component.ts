@@ -3,6 +3,7 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { EmployeesService } from 'src/app/services/employees/employees.service';
+import { employee } from 'src/app/entity/employee';
 
 
 export interface Product{
@@ -24,7 +25,8 @@ export interface Product{
 })
 export class HomeComponent implements OnInit {
 
-  
+  empl: employee[] = [];
+
   constructor(private employeesService : EmployeesService) { 
     
   }
@@ -32,7 +34,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.employeesService.GetAll().subscribe(item=>{
      
-      
+      this.empl = item;
+      console.log(this.empl);
     });
   }
   displayedColumns: string[] = ['id', 'title', 'price', 'description','state', 'stock','discount','actions'];

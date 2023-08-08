@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { employeeResponse } from '../../entity/employee';
+import { employee, employeeResponse } from '../../entity/employee';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -12,24 +12,24 @@ export class EmployeesService {
 
   constructor(private http: HttpClient) { }
 
-  GetEmployeeId(id : number): Observable<employeeResponse> 
+  GetEmployeeId(id : number): Observable<any> 
   {
     let queryParams = new HttpParams();
     queryParams = queryParams.append("id",id);
-    return this.http.get<employeeResponse>(`${environment.url_api}/Usuario/GetById`, {params:queryParams})
+    return this.http.get<employeeResponse>(`${environment.url_api}/Employee/GetListByIdEmployeeAsync`, {params:queryParams})
     .pipe(
       map( resp => {
-        return resp
+        return resp.data
       })
     );
   }
-  GetAll(): Observable<employeeResponse> 
+  GetAll(): Observable<any[]> 
   {
     let queryParams = new HttpParams();
-    return this.http.get<employeeResponse>(`${environment.url_api}/Usuario/GetById`)
+    return this.http.get<employeeResponse>(`${environment.url_api}/Employee/GetAllEmployee`)
     .pipe(
       map( resp => {
-        return resp
+        return resp.data
       })
     );
   }
