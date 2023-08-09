@@ -30,8 +30,8 @@ namespace AmarisTest
         {
             return HttpPolicyExtensions
                 .HandleTransientHttpError()
-                .OrResult(msg => msg.StatusCode == System.Net.HttpStatusCode.NotFound)
-                .WaitAndRetryAsync(6, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2,
+                .OrResult(msg => msg.StatusCode == System.Net.HttpStatusCode.TooManyRequests)
+                .WaitAndRetryAsync(2, retryAttempt => TimeSpan.FromSeconds(Math.Pow(5,
                                                                             retryAttempt)));
         }
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -57,7 +57,7 @@ namespace AmarisTest
                 client => {
                     client.BaseAddress = new Uri(url);
                 }
-            ).SetHandlerLifetime(TimeSpan.FromMinutes(5))  //Set lifetime to five minutes
+            ).SetHandlerLifetime(TimeSpan.FromSeconds(10))
             .AddPolicyHandler(GetRetryPolicy());
 
 

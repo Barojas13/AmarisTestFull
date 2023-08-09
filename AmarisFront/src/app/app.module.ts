@@ -8,14 +8,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from './material/materia.module';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { RouterModule  } from '@angular/router';
 import { LayoutComponent } from './view/layout/layout.component';
 
 import {MatTableModule} from '@angular/material/table';
+import { HomeComponent } from './view/home/home.component';
+import { ViewEmployeeComponent } from './view/components/view-employee/view-employee.component';
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
+    HomeComponent,
+    ViewEmployeeComponent
   ],
   imports: [
     BrowserModule,
