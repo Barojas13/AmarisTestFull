@@ -5,13 +5,15 @@ import { HeaderComponent } from './components/header/header.component';
 
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material/materia.module';
-import { LoadingModalComponent } from './components/loading-modal/loading-modal.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AlertDialogComponent } from './components/alert-dialog/alert-dialog.component';
 
 @NgModule({
   declarations: [
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    AlertDialogComponent
   ],
   exports:[
     FooterComponent,
@@ -22,7 +24,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     CommonModule,
     MaterialModule,
     RouterModule,
-    MatProgressSpinnerModule 
+    MatProgressSpinnerModule,
+    MatDialogModule
   ]
 })
 export class SharedModule { }

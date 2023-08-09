@@ -1,13 +1,12 @@
 .table-container {
-    width: 100%; /* Make sure the container takes up the full width */
-    overflow-x: auto; /* Enable horizontal scrolling if content overflows */
-  }
+  width: 100%;
+  overflow-x: auto;
+}
   
-  table.mat-table {
-    width: 100%; /* Make sure the table takes up the full width of its container */
-  }
+table.mat-table {
+  width: 100%;
+}
 
-  /* Example custom styling */
 mat-form-field {
   width: 300px;
   margin-bottom: 20px;
@@ -26,5 +25,5 @@ mat-form-field {
 .input-button-container {
   display: flex;
   align-items: center;
-  gap: 10px; /* Ajusta el valor según tus necesidades */
+  gap: 10px;
 }

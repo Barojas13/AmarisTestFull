@@ -17,6 +17,7 @@ import { ViewEmployeeComponent } from './view/components/view-employee/view-empl
 import {MatInputModule} from '@angular/material/input';
 import { LoadingModalComponent } from './shared/components/loading-modal/loading-modal.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -36,13 +37,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     HttpClientModule,
     RouterModule,
     FormsModule,
-    HttpClientModule,
     MatTableModule,
     MatInputModule,
-    SharedModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDialogModule
   ],
-  providers: [MaterialModule,MatTableModule],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
