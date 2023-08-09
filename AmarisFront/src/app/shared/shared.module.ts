@@ -5,6 +5,8 @@ import { HeaderComponent } from './components/header/header.component';
 
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material/materia.module';
+import { LoadingModalComponent } from './components/loading-modal/loading-modal.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { MaterialModule } from '../material/materia.module';
   imports: [
     CommonModule,
     MaterialModule,
-    RouterModule 
+    RouterModule,
+    MatProgressSpinnerModule 
   ]
 })
 export class SharedModule { }

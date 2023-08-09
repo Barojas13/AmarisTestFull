@@ -14,12 +14,17 @@ import { LayoutComponent } from './view/layout/layout.component';
 import {MatTableModule} from '@angular/material/table';
 import { HomeComponent } from './view/home/home.component';
 import { ViewEmployeeComponent } from './view/components/view-employee/view-employee.component';
+import {MatInputModule} from '@angular/material/input';
+import { LoadingModalComponent } from './shared/components/loading-modal/loading-modal.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     HomeComponent,
-    ViewEmployeeComponent
+    ViewEmployeeComponent,
+    LoadingModalComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,10 @@ import { ViewEmployeeComponent } from './view/components/view-employee/view-empl
     RouterModule,
     FormsModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatInputModule,
+    SharedModule,
+    MatProgressSpinnerModule
   ],
   providers: [MaterialModule,MatTableModule],
   bootstrap: [AppComponent]

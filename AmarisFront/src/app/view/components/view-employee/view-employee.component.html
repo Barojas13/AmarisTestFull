@@ -1,19 +1,20 @@
 <div class="table-container2">
   <form class="example-form">
+    <div class="input-button-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Ingresar Id empleado</mat-label>
+        <input matInput placeholder="Id" name="idEmpleado" [(ngModel)]="idEmpleado">
+      </mat-form-field>
 
-    <mat-form-field class="example-full-width" style="margin-top: 1%;">
-      <mat-label>Favorite food</mat-label>
-      <input matInput placeholder="Ex. Pizza" value="Sushi">
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Enter your name</mat-label>
-      <input matInput placeholder="Name">
-    </mat-form-field>
-
+      <button mat-raised-button color="primary" (click)="searchEmpleyee()">Buscar</button>
+    </div>
   </form>
+
+  <div *ngIf="showSpinner" class="loading-overlay">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </div>
 </div>
-<div class="table-container" >
+<div class="table-container" *ngIf="clickButton">
   <table mat-table [dataSource]="data" class="mat-elevation-z8">
     <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
       <th mat-header-cell *matHeaderCellDef> {{ column | titlecase }} </th>
